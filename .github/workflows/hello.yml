@@ -14,5 +14,5 @@ jobs:
       - name: Show repository files
         run: ls -la
 
-      - name: Check imaginary file exists
-        run: test -f index-sami-imaginary-file.html
+      - name: Check index.html file exists
+        run: test -f index.html
