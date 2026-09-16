@@ -1,12 +1,18 @@
-name: My First Action
+name: My First CI
 
 on:
   push:
 
 jobs:
-  say-hello:
+  inspect-website:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say hello
-        run: echo "Hello Mohammad, GitHub Actions is running!"
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      - name: Show repository files
+        run: ls -la
+
+      - name: Check index.html exists
+        run: test -f index.html
